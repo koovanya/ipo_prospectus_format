@@ -1,3 +1,6 @@
+#依据《中国证券监督管理委员会公告[2020]39号——公开发行证券的公司信息披露内容与格式准则第45号——科创板上市公司发行证券申请文件》
+#原文件地址http://www.sse.com.cn/lawandrules/regulations/csrcannoun/c/5178163.pdf
+
 from docx import Document
 import docx.shared
 
