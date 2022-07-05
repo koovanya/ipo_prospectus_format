@@ -12,7 +12,7 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 doc = Document()
 
 #导入目录模板（excel文件）
-workbook = openpyxl.load_workbook(r'E:\OneDrive - invinciblekoo\桌面\template.xlsx')
+workbook = openpyxl.load_workbook('template.xlsx')
 sheet = workbook['content']
 
 #将目录模板（excel文件）的数据取出，放到列表里
@@ -44,6 +44,8 @@ for i in range(0,sheet.max_row):
                 r.set(qn('w:eastAsia'), '黑体')
                 #设置一级标题居中
                 title.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+                # 设置1.5倍行距
+                title.paragraph_format.line_spacing = 1.5
         #若第一列为空，则设置第二列文字为二级标题
         if lst[i][0] is None:
             title = doc.add_heading(lst[i][1],level=2)
@@ -60,6 +62,9 @@ for i in range(0,sheet.max_row):
                 #设置东亚字体
                 r = run._element.rPr.rFonts
                 r.set(qn('w:eastAsia'), '黑体')
+                # 设置1.5倍行距
+                title.paragraph_format.line_spacing = 1.5
+
 
                 #插入正文样本
                 para = doc.add_paragraph()
@@ -75,7 +80,8 @@ for i in range(0,sheet.max_row):
                 #设置东亚字体
                 r = run2._element.rPr.rFonts
                 r.set(qn('w:eastAsia'), '宋体')
-
+                # 设置1.5倍行距
+                para.paragraph_format.line_spacing = 1.5
 
 #保存文件
 doc.save('ipo_style.docx')
