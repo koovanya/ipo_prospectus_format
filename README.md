@@ -1,4 +1,4 @@
-# ipo_style
+# ipo_prospectus_format
 自动调整科创板招股说明书格式并生成目录与标题
 
 依据《中国证券监督管理委员会公告[2020]39号——公开发行证券的公司信息披露内容与格式准则第45号——科创板上市公司发行证券申请文件》编写，原文件地址为http://www.sse.com.cn/lawandrules/regulations/csrcannoun/c/5178163.pdf
